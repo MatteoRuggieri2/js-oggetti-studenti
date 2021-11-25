@@ -77,11 +77,10 @@ for (let i = 0; i < studentsArray.length; i++) {
 const addStudentChoice = prompt(
 `
     Vuoi aggiungere uno studente?
-    
+
     Se vuoi aggiungerlo digita 'si', altrimenti 'no'.
     Clicca il tasto 'ok' per continuare.
 `)
-console.log('Add Choice: ', addStudentChoice);
 
 // Se vuole aggiungere uno studente chiedo nome, cognome e età
 if (addStudentChoice === 'si') {
@@ -89,40 +88,45 @@ if (addStudentChoice === 'si') {
     const addStudentSurname = prompt('Qual è il suo cognome?');
     const addStudentAge = parseInt(prompt('Qual è la sua età?'));
 
-    console.log('New Name: ', addStudentName);
-    console.log('New Surame: ', addStudentSurname);
-    console.log('New Age: ', addStudentAge);
-
     // Inserisco le info del nuovo studente in un oggetto
-    let newStudent = {
+    let newStudent = createObject(addStudentName, addStudentSurname, addStudentAge);
 
-        nome: addStudentName,
-        cognome: addStudentSurname,
-        eta: addStudentAge
-
-    }
-
-    console.log('Nuovo studente: ', newStudent);
-
+    // Inserisco l'oggetto nell'array
     studentsArray.push(newStudent)
 
-    console.log('Array di studenti aggiornato: ', studentsArray)
+    alert(`
+    Lo studente è stato registrato con successo!
+
+    Recap info studente:
+    Nome: ${addStudentName}
+    Cognome: ${addStudentSurname}
+    Età: ${addStudentAge}
+    `)
+
+    // Stampo la lista aggiornata degli studenti
+    console.log('Lista aggiornata degli studenti: ', studentsArray)
+
 
 }
 
 
 
+// FUNCTION
+// Funzione per creare studenti con 3 info.
 
+// firstElement --> Nome
+// secondElement --> Cognome
+// thirdElement --> Età
 
+// return: Ritorna un oggetto completo di informazioni sullo studente
 
-// // FUNCTION
-// // Funzione per creare oggetti di 3 elementi
-// function createObject (firstElement, secondElement, thirdElement)
+function createObject (firstElement, secondElement, thirdElement) {
+    
+    let object = {
+        nome: firstElement,
+        cognome: secondElement,
+        eta: thirdElement
+    }
 
-
-
-
-
-// // Funzione per inserire oggetti negli array
-
-// function arrayObjectPush (arrayToPush)
+    return object;
+}
