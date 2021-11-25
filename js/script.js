@@ -74,7 +74,13 @@ for (let i = 0; i < studentsArray.length; i++) {
 }
 
 // Chiedo se vuole aggiungere uno studente
-const addStudentChoice = prompt('Vuoi aggiungere uno studente?')
+const addStudentChoice = prompt(
+`
+    Vuoi aggiungere uno studente?
+    
+    Se vuoi aggiungerlo digita 'si', altrimenti 'no'.
+    Clicca il tasto 'ok' per continuare.
+`)
 console.log('Add Choice: ', addStudentChoice);
 
 // Se vuole aggiungere uno studente chiedo nome, cognome e età
@@ -98,4 +104,25 @@ if (addStudentChoice === 'si') {
 
     console.log('Nuovo studente: ', newStudent);
 
+    studentsArray.push(newStudent)
+
+    console.log('Array di studenti aggiornato: ', studentsArray)
+
 }
+
+
+
+
+
+
+// // FUNCTION
+// // Funzione per creare oggetti di 3 elementi
+// function createObject (firstElement, secondElement, thirdElement)
+
+
+
+
+
+// // Funzione per inserire oggetti negli array
+
+// function arrayObjectPush (arrayToPush)
