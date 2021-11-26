@@ -61,15 +61,23 @@ const studentsArray =
 // leggo l'array di studenti
 for (let i = 0; i < studentsArray.length; i++) {
     const singleStudent = studentsArray[i]
+
+    // --- Leggo solo il nome e il cognome. ---
+    // Questo metodo è più giusto perchè se aggiungo qualcosa all'oggetto 
+    // continuerà a stamparmi solo quello che voglio, in questo caso 
+    // nome e cognome, e non le cose nuove che ho aggiunto
+    console.log(singleStudent.nome + ' ' + singleStudent.cognome )
     
-    // Per ogni studente leggo le info
-    for (let key in singleStudent) {
+    
+    // --- Per ogni studente leggo le info ---
+    // Così se aggiungo un nuovo parametro all'intero dell'oggetto me lo stamperà lo stesso
+    // for (let key in singleStudent) {
         
-        // Se se la key è diversa da età stampo la info
-        if (key !== 'eta') {
-            console.log(key + ': ' + singleStudent[key]);
-        }
-    }
+    //     // Se se la key è diversa da età stampo la info
+    //     if (key !== 'eta') {
+    //         console.log(key + ': ' + singleStudent[key]);
+    //     }
+    // }
 
 }
 
